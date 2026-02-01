@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Clinic Appointment System</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<h1>Clinic Appointment System</h1>
+
+<!-- ================= PATIENT LIST ================= -->
+<section>
+    <h2>Patients</h2>
+    <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Action</th> <!-- for Delete button -->
+        </tr>
+        </thead>
+        <tbody id="patient-list"></tbody>
+    </table>
+</section>
+
+<!-- ================= DOCTOR LIST ================= -->
+<section>
+    <h2>Doctors</h2>
+    <ul id="doctor-list"></ul>
+</section>
+
+<!-- ================= ADD PATIENT ================= -->
+<section>
+    <h2>Add New Patient</h2>
+    <form id="add-patient-form">
+        <input type="text" id="patient-name" placeholder="Patient Name" required />
+        <input type="text" id="patient-gender" placeholder="Gender" />
+        <input type="text" id="patient-phone" placeholder="Phone" />
+        <button type="submit">Add Patient</button>
+    </form>
+</section>
+
+<!-- ================= BOOK APPOINTMENT ================= -->
+<section>
+    <h2>Book Appointment</h2>
+    <form id="book-appointment-form">
+        <select id="appointment-patient" required></select>
+        <select id="appointment-doctor" required></select>
+        <input type="date" id="appointment-date" required />
+        <select id="appointment-priority" required>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <button type="submit">Book Appointment</button>
+    </form>
+</section>
+
+<!-- ================= APPOINTMENT SCHEDULE ================= -->
+<section>
+    <h2>Appointment Schedule</h2>
+    <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+        <thead>
+        <tr>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Priority</th>
+            <th>Action</th> <!-- for Delete button -->
+        </tr>
+        </thead>
+        <tbody id="appointment-table">
+        <!-- appointments will be loaded here dynamically -->
+        </tbody>
+    </table>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
